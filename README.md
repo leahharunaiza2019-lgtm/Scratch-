@@ -1,7 +1,5 @@
 # Scratch-
 Intern 
-# Scratch-
-Intern 
 <!DOCTYPE html>
 <html lang="en">
 <head>
