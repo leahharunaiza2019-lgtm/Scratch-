@@ -6,16 +6,11 @@
   <title>MELIA | Online Boutique</title>
   <meta name="description" content="MELIA - a purple and lilac online shopping boutique, growing from online to a walk-in store.">
 
-  <!-- Optional web fonts. The site still works beautifully if the fonts cannot load. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================================
-       MELIA - ALL STYLES ARE INSIDE THIS FILE
-       Purple + Lilac palette
-       ========================================================= */
     :root {
       --purple: #6a1b9a;
       --deep-purple: #3d075b;
@@ -32,37 +27,32 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: "Montserrat", Arial, sans-serif;
       color: var(--ink);
-      background: var(--pale-lilac);
+      background: linear-gradient(180deg, #fffafc 0%, #f9f1ff 100%);
       line-height: 1.6;
     }
-
     a { color: inherit; text-decoration: none; }
     button, input, select { font: inherit; }
 
-    /* TOP NOTICE - intentionally very visible purple */
     .topbar {
-      background: var(--deep-purple) !important;
-      color: #fff !important;
+      background: linear-gradient(90deg, var(--deep-purple), var(--purple));
+      color: #fff;
       text-align: center;
-      padding: 9px 15px;
-      font-size: 12px;
-      letter-spacing: 1.2px;
+      padding: 10px 15px;
+      font-size: 11px;
+      letter-spacing: 1.4px;
       font-weight: 700;
     }
 
-    /* NAVIGATION */
     .nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,0.97) !important;
-      border-bottom: 3px solid var(--lilac) !important;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 3px solid var(--lilac);
       backdrop-filter: blur(10px);
     }
 
@@ -83,8 +73,8 @@
       font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 35px;
       font-weight: 700;
-      color: var(--deep-purple) !important;
-      letter-spacing: 3px;
+      color: var(--deep-purple);
+      letter-spacing: 2px;
     }
 
     .logo-mark {
@@ -93,8 +83,8 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
+      background: linear-gradient(135deg, var(--purple), var(--bright-purple));
       color: white;
-      background: linear-gradient(135deg, var(--purple), var(--bright-purple)) !important;
       box-shadow: 0 8px 20px rgba(106,27,154,.28);
       font-family: Georgia, serif;
       font-size: 20px;
@@ -107,23 +97,29 @@
       font-size: 13px;
       font-weight: 700;
     }
-
-    .nav-links a:hover { color: var(--purple); }
+    .nav-links a {
+      color: var(--ink);
+      opacity: 0.82;
+      transition: opacity .2s ease;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--purple); }
 
     .cart-btn {
       border: 0;
-      background: var(--purple) !important;
-      color: #fff !important;
+      background: var(--purple);
+      color: #fff;
       padding: 11px 16px;
       border-radius: 999px;
       cursor: pointer;
       font-weight: 700;
       box-shadow: 0 7px 18px rgba(106,27,154,.25);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .cart-btn:hover {
+      background: var(--deep-purple);
+      transform: translateY(-1px);
     }
 
-    .cart-btn:hover { background: var(--deep-purple) !important; }
-
-    /* HERO */
     .hero {
       min-height: 560px;
       display: grid;
@@ -133,9 +129,8 @@
       background:
         radial-gradient(circle at 15% 20%, rgba(216,180,254,.75), transparent 28%),
         radial-gradient(circle at 88% 25%, rgba(142,36,170,.32), transparent 30%),
-        linear-gradient(135deg, #fff 0%, var(--light-lilac) 48%, #ead5ff 100%) !important;
+        linear-gradient(135deg, #fff 0%, var(--light-lilac) 48%, #ead5ff 100%);
     }
-
     .hero::before {
       content: "";
       position: absolute;
@@ -179,7 +174,7 @@
 
     h1 {
       font-size: clamp(60px, 9vw, 105px);
-      color: var(--deep-purple) !important;
+      color: var(--deep-purple);
       letter-spacing: -2px;
       margin-bottom: 15px;
     }
@@ -195,6 +190,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 24px;
     }
 
     .btn {
@@ -207,23 +203,40 @@
       border-radius: 999px;
       font-weight: 800;
       font-size: 13px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
     }
 
     .btn-primary {
-      background: var(--purple) !important;
-      color: #fff !important;
+      background: var(--purple);
+      color: #fff;
       box-shadow: 0 10px 25px rgba(106,27,154,.24);
     }
-
-    .btn-primary:hover { background: var(--deep-purple) !important; }
+    .btn-primary:hover { background: var(--deep-purple); }
 
     .btn-secondary {
-      background: #fff !important;
-      color: var(--purple) !important;
+      background: #fff;
+      color: var(--purple);
       border: 2px solid var(--lilac);
     }
 
-    /* HERO ART */
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--deep-purple);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .hero-badges span {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
     .hero-art {
       min-height: 350px;
       position: relative;
@@ -235,12 +248,11 @@
       width: min(380px, 88%);
       aspect-ratio: 1/1;
       border-radius: 42% 58% 55% 45%;
-      background: linear-gradient(145deg, var(--purple), #b35bd2) !important;
+      background: linear-gradient(145deg, var(--purple), #b35bd2);
       transform: rotate(-6deg);
       box-shadow: 0 30px 65px rgba(61,7,91,.24);
       position: relative;
     }
-
     .art-card::before {
       content: "M";
       position: absolute;
@@ -255,7 +267,7 @@
 
     .floating {
       position: absolute;
-      background: #fff !important;
+      background: #fff;
       border: 2px solid var(--lilac);
       color: var(--deep-purple);
       padding: 12px 16px;
@@ -264,11 +276,9 @@
       font-size: 12px;
       font-weight: 800;
     }
-
     .floating.one { top: 18px; right: 6%; }
     .floating.two { bottom: 12px; left: 4%; }
 
-    /* SECTIONS */
     .section {
       max-width: 1200px;
       margin: auto;
@@ -279,7 +289,6 @@
       text-align: center;
       margin-bottom: 40px;
     }
-
     .section-heading .tag {
       color: var(--purple);
       font-size: 11px;
@@ -287,20 +296,17 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-
     .section-heading h2 {
       font-size: clamp(42px, 6vw, 65px);
       color: var(--deep-purple);
       margin: 7px 0 12px;
     }
-
     .section-heading p {
       max-width: 620px;
       margin: auto;
       color: var(--muted);
     }
 
-    /* PRODUCTS */
     .toolbar {
       display: flex;
       gap: 12px;
@@ -318,7 +324,6 @@
       outline: none;
       background: #fff;
     }
-
     .search:focus { border-color: var(--lilac); }
 
     .filter {
@@ -337,14 +342,13 @@
     }
 
     .product {
-      background: #fff !important;
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: 0 7px 22px rgba(61,7,91,.07);
       transition: transform .2s ease, box-shadow .2s ease;
     }
-
     .product:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow);
@@ -355,18 +359,16 @@
       display: grid;
       place-items: center;
       font-size: 70px;
-      background: linear-gradient(145deg, var(--light-lilac), #fff) !important;
+      background: linear-gradient(145deg, var(--light-lilac), #fff);
       color: var(--purple);
     }
 
     .product-body { padding: 18px; }
-
     .product-body h3 {
       font-size: 27px;
       color: var(--deep-purple);
       margin-bottom: 4px;
     }
-
     .product-body p {
       color: var(--muted);
       font-size: 12px;
@@ -390,20 +392,19 @@
     .add {
       border: 0;
       cursor: pointer;
-      background: var(--deep-purple) !important;
-      color: #fff !important;
+      background: var(--deep-purple);
+      color: #fff;
       border-radius: 999px;
       padding: 9px 13px;
       font-size: 11px;
       font-weight: 800;
+      transition: background .2s ease;
     }
+    .add:hover { background: var(--purple); }
 
-    .add:hover { background: var(--purple) !important; }
-
-    /* ABOUT */
     .about-box {
-      background: linear-gradient(135deg, var(--deep-purple), var(--purple)) !important;
-      color: #fff !important;
+      background: linear-gradient(135deg, var(--deep-purple), var(--purple));
+      color: #fff;
       border-radius: 32px;
       padding: 55px;
       display: grid;
@@ -411,71 +412,59 @@
       gap: 40px;
       box-shadow: 0 25px 55px rgba(61,7,91,.25);
     }
-
     .about-box h2 { font-size: 58px; margin-bottom: 15px; }
     .about-box p { color: #f5eaff; }
 
     .about-points { display: grid; gap: 15px; }
-
     .point {
-      background: rgba(255,255,255,.12) !important;
+      background: rgba(255,255,255,.12);
       border: 1px solid rgba(255,255,255,.25);
       padding: 17px;
       border-radius: 16px;
     }
-
     .point strong {
       display: block;
       color: #fff;
       margin-bottom: 3px;
     }
-
     .point span { color: #eadbfa; font-size: 13px; }
 
-    /* CONTACT */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 25px;
     }
-
     .contact-card {
-      background: #fff !important;
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 30px;
       box-shadow: 0 7px 22px rgba(61,7,91,.06);
     }
-
     .contact-card h3 {
       font-size: 34px;
       color: var(--deep-purple);
       margin-bottom: 10px;
     }
-
     .contact-card a {
       color: var(--purple);
       font-weight: 800;
       word-break: break-word;
     }
 
-    /* FOOTER */
     footer {
-      background: var(--deep-purple) !important;
-      color: #fff !important;
+      background: var(--deep-purple);
+      color: #fff;
       padding: 30px 22px;
       text-align: center;
     }
-
     footer strong {
       font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 29px;
       letter-spacing: 2px;
     }
-
     footer p { color: #decbed; font-size: 12px; margin-top: 5px; }
 
-    /* CART DRAWER */
     .overlay {
       position: fixed;
       inset: 0;
@@ -483,7 +472,6 @@
       z-index: 90;
       display: none;
     }
-
     .overlay.show { display: block; }
 
     .cart {
@@ -492,7 +480,7 @@
       top: 0;
       height: 100%;
       width: min(430px, 92vw);
-      background: #fff !important;
+      background: #fff;
       z-index: 100;
       transform: translateX(105%);
       transition: transform .25s ease;
@@ -500,18 +488,16 @@
       flex-direction: column;
       box-shadow: -15px 0 45px rgba(61,7,91,.2);
     }
-
     .cart.open { transform: translateX(0); }
 
     .cart-head {
       padding: 20px;
-      background: var(--deep-purple) !important;
-      color: #fff !important;
+      background: var(--deep-purple);
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
     .cart-head h2 { font-size: 35px; }
 
     .close {
@@ -535,13 +521,12 @@
       padding: 14px 0;
       border-bottom: 1px solid var(--border);
     }
-
     .cart-item h4 { color: var(--deep-purple); }
     .cart-item small { color: var(--muted); }
 
     .remove {
       border: 0;
-      background: var(--light-lilac) !important;
+      background: var(--light-lilac);
       color: var(--purple);
       border-radius: 8px;
       padding: 5px 8px;
@@ -551,7 +536,7 @@
     .cart-foot {
       padding: 20px;
       border-top: 1px solid var(--border);
-      background: var(--pale-lilac) !important;
+      background: var(--pale-lilac);
     }
 
     .total {
@@ -565,8 +550,8 @@
     .checkout {
       width: 100%;
       border: 0;
-      background: var(--purple) !important;
-      color: #fff !important;
+      background: var(--purple);
+      color: #fff;
       padding: 14px;
       border-radius: 12px;
       cursor: pointer;
@@ -579,7 +564,6 @@
       padding: 50px 10px;
     }
 
-    /* MOBILE */
     @media (max-width: 900px) {
       .products { grid-template-columns: repeat(2, 1fr); }
       .hero-inner, .about-box, .contact-grid { grid-template-columns: 1fr; }
@@ -600,7 +584,7 @@
 </head>
 
 <body>
-  <div class="topbar">MELIA • PURPLE, LILAC &amp; BEAUTIFUL THINGS • SHOP ONLINE</div>
+  <div class="topbar">FREE SHIPPING OVER $50 • BEAUTIFUL FINDS FOR EVERYDAY JOY</div>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -624,16 +608,21 @@
       <div class="hero-inner">
         <div>
           <span class="eyebrow">WELCOME TO MELIA</span>
-          <h1>Simply<br>Beautiful.</h1>
+          <h1>Feel-good<br>beauty.</h1>
           <p class="hero-copy">
-            A stylish shopping line created to bring beautiful finds, thoughtful pieces
-            and a little luxury closer to you — starting online and growing toward a
-            welcoming walk-in store.
+            Thoughtful pieces, soft colors, and a little extra sparkle for the life you love.
+            MELIA brings together beauty, comfort, and style in a shopping experience that feels warm and easy.
           </p>
 
           <div class="hero-buttons">
-            <a class="btn btn-primary" href="#shop">SHOP MELIA</a>
+            <a class="btn btn-primary" href="#shop">SHOP FAVORITES</a>
             <a class="btn btn-secondary" href="#about">OUR STORY</a>
+          </div>
+
+          <div class="hero-badges">
+            <span>Curated picks</span>
+            <span>Easy checkout</span>
+            <span>Gift-ready</span>
           </div>
         </div>
 
@@ -649,7 +638,7 @@
       <div class="section-heading">
         <span class="tag">The MELIA edit</span>
         <h2>Shop the collection</h2>
-        <p>Explore our sample collection below. Prices are shown in US dollars.</p>
+        <p>Explore a few beautiful essentials chosen to make everyday life feel a little brighter.</p>
       </div>
 
       <div class="toolbar">
@@ -669,27 +658,26 @@
     <section class="section" id="about">
       <div class="about-box">
         <div>
-          <h2>From online to a walk-in store.</h2>
+          <h2>Friendly shopping, from online to a walk-in store.</h2>
           <p>
-            MELIA begins as an online shopping line with a simple vision:
-            make shopping feel personal, beautiful and easy. As the brand grows,
-            the dream is to welcome customers into a physical walk-in store where
-            they can see, touch and experience MELIA pieces in person.
+            MELIA starts with a simple idea: shopping should feel personal, joyful, and easy.
+            From beautiful small finds to special statement pieces, we create an experience that feels warm,
+            thoughtful, and a little bit dreamy — growing with the hope of one day welcoming you into a lovely in-person shop.
           </p>
         </div>
 
         <div class="about-points">
           <div class="point">
-            <strong>Curated with care</strong>
-            <span>Pieces selected to feel stylish, useful and special.</span>
+            <strong>Chosen with care</strong>
+            <span>Every piece is selected to feel stylish, useful, and meaningful.</span>
           </div>
           <div class="point">
-            <strong>Online first</strong>
-            <span>Shop from wherever you are, whenever you are ready.</span>
+            <strong>Easy and welcoming</strong>
+            <span>Shop from your phone or laptop whenever it feels right for you.</span>
           </div>
           <div class="point">
             <strong>Growing with you</strong>
-            <span>Our long-term goal is a beautiful MELIA walk-in experience.</span>
+            <span>We’re building toward a beautiful MELIA walk-in experience you can enjoy in person.</span>
           </div>
         </div>
       </div>
@@ -699,7 +687,7 @@
       <div class="section-heading">
         <span class="tag">Let's connect</span>
         <h2>Contact MELIA</h2>
-        <p>Have a question, order request or collaboration idea? Reach out.</p>
+        <p>Have a question, order request, or a collaboration idea? We’d love to hear from you.</p>
       </div>
 
       <div class="contact-grid">
@@ -720,7 +708,7 @@
 
   <footer>
     <strong>MELIA</strong>
-    <p>© <span id="year"></span> MELIA. Purple dreams, beautiful finds.</p>
+    <p>© <span id="year"></span> MELIA. Beautiful finds for everyday joy.</p>
   </footer>
 
   <div class="overlay" id="overlay" onclick="closeCart()"></div>
@@ -876,8 +864,7 @@
         "%0A%0AMy name:%0AMy phone/address:%0A%0AThank you."
       );
 
-      window.location.href =
-        `mailto:Leahharunaiza2019@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:Leahharunaiza2019@gmail.com?subject=${subject}&body=${body}`;
     }
 
     document.getElementById("year").textContent = new Date().getFullYear();
